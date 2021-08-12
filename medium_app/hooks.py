@@ -89,8 +89,14 @@ app_license = "MIT"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
+doc_events = {
+	"Create Post":{
+
+		"after_insert": "medium_app.post.mediumpost"
+	},
+}
 # 	"*": {
+
 # 		"on_update": "method",
 # 		"on_cancel": "method",
 # 		"on_trash": "method"
