@@ -199,21 +199,18 @@ def mediumpost(doc,method):
         if doc.tags_with_comma_seperated:
             tags = doc.tags_with_comma_seperated.split(',')
 
-        image_address = get_absolute_path(doc.image123)
-        image = client.upload_image(image_address, 'image/png')
-        
-        post = client.create_post(user_id=user["id"], title=doc.name, content=f"<h2>{doc.story_heading}</h2><img src= '{image['url']}' <p>{doc.content}</p>",tags=tags,
+        # for future referance (not used until now)
+        # image_address = get_absolute_path(doc.image123)
+        # image = client.upload_image(image_address, 'image/jpeg')
+       
+        post = client.create_post(user_id=user["id"], title=doc.name, content=doc.content,tags=tags,
                                 content_format="html", publish_status=doc.public_status, publication_id=None,
                                 notify_followers=True)
-
-        # print('dihdidchuhcud',image)
-        # print(post)
 
         frappe.msgprint(msg = 'Post has been created',
                                 title = 'Message',
                                 indicator = 'green')
 
-        return
     except:
         frappe.msgprint(msg = 'Something Went Wrong',
                                     title = 'Message',

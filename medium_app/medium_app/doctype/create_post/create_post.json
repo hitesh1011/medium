@@ -7,6 +7,8 @@
  "engine": "InnoDB",
  "field_order": [
   "title",
+  "tags_with_comma_seperated",
+  "image123",
   "content",
   "public_status"
  ],
@@ -20,6 +22,7 @@
    "unique": 1
   },
   {
+   "default": "<h1>heading</h1>\n<p><img src=\"\">\n     content</p>",
    "fieldname": "content",
    "fieldtype": "HTML Editor",
    "label": "Content"
@@ -32,11 +35,21 @@
    "label": "Public Status",
    "options": "\npublic\ndraft",
    "reqd": 1
+  },
+  {
+   "fieldname": "tags_with_comma_seperated",
+   "fieldtype": "Data",
+   "label": "tags with comma seperated"
+  },
+  {
+   "fieldname": "image123",
+   "fieldtype": "Attach Image",
+   "label": "Image"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-08-12 10:19:36.189520",
+ "modified": "2021-08-27 10:45:53.505817",
  "modified_by": "Administrator",
  "module": "medium_app",
  "name": "Create Post",
